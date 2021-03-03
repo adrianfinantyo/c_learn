@@ -33,3 +33,6 @@
 00000043614#Febe Febrita#Informatika
 00000047369#Albert Agustian#Sistem Informasi
 00000012345#Siapa aja#Kepo
+00000042580#Adrianus Tristan#Informatika
+00000042581#Adrian Finantyo#DKV
+00000042582#Bagas#Teknik
