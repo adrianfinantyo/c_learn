@@ -154,9 +154,9 @@ int movieDetails(){
         else if(i==4)
         {
             printf("***** ***** *    * ****  ***** *    *  ****      ****  *   *  ***  *    *  *** \n");
-            printf("* 	    *   **   * *   *   *   **   * *         *    * *   * *   * **   * *   *\n");
+            printf("* 	*   **   * *   *   *   **   * *         *    * *   * *   * **   * *   *\n");
             printf("*****   *   * *  * *   *   *   * *  * * ****    *    * ***** ***** * *  * *****\n");
-            printf("*	    *   *  * * *   *   *   *  * * *    *    *    * *   * *   * *  * * *   *\n");
+            printf("*	*   *  * * *   *   *   *  * * *    *    *    * *   * *   * *  * * *   *\n");
             printf("*     ***** *   ** ****  ***** *   **  ****      ****  *   * *   * *   ** *   *\n");
         }
         else if(i==5)
@@ -224,12 +224,15 @@ void showmenu(){
 	//system("cls");
 	//printf("Hello %s, Welcome!\n\n", nodeUser->name);
   int pilih;
+  system("cls");
   printf("Hello %s, Welcome!\n\n", nodeUser->name);
 	printf("1. Movie Details \n");
 	printf("2. Choose Location\n");
-	printf("3. Exit\n");
+	printf("3. Choose Seat\n");
+	printf("4. Ticket Checkout\n");
+	printf("0. Exit\n");
 	printf("Choose menu : ");
-  scanf("%d", &pilih);
+  scanf("%d", &pilih); fflush(stdin);
   printf("\n");
   if(pilih==1)
   {
@@ -241,10 +244,15 @@ void showmenu(){
     location();
     showmenu();
    }
-  else if(pilih==3)
+  else if(pilih==0)
   {
     exit(0);
   }
+  else{
+	printf("This menu is not ready for now, please come back soon.\n"); getchar();
+	showmenu();
+  }
+	
 }
 
 int main() {
