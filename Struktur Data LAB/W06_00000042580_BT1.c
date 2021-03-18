@@ -36,5 +36,6 @@ int main(){
     insert(root, 60);
     insert(root, 80);
 
+    getchar();
     return 0;
 }

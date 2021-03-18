@@ -29,9 +29,6 @@ void enQueue(int data){
 
 int deQueue(){
 	struct queue *trash;
-	if(isEmpty(front)){
-        return 1;
-    }
     trash = front;
     front = trash->next;
     free(trash);
@@ -77,6 +74,7 @@ int main(){
 			}
 		}
 	}while(flag == 0);
-	printf("\aProgram terminated");
+	printf("\aProgram terminated\n");
+	getchar();
 	return 0;
 }
