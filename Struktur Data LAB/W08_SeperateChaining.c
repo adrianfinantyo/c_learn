@@ -45,6 +45,6 @@ int main(){
         scanf("%d", &inputKey);
         insertToChain(inputKey, &HashT[inputKey%10]);
 
-        return 0;
     }
+    return 0;
 }

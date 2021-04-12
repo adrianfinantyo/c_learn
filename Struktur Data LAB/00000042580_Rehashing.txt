@@ -1,0 +1,27 @@
+// MENGAPA DILAKUKAN REHASHING? //
+    Rehashing dilakukan untuk mencegah terjadinya collision
+    dengan cara memperbesar ukuran hash table sehingga setiap
+    index data memiliki value yang unik.
+
+// KAPAN REHASHING DILAKUKAN BERDASARKAN GAMBAR DIATAS? //
+    Berdasarkan gambar diatas, rehashing dilakukan pada saat
+
+
+// SEBUTKAN LANGKAH-LANGKAH MELAKUKAN REHASHING SECARA
+   SINGKAT, PADAT, DAN JELAS! //
+    Menyelediki apakah hash table melebihi 70% kapasitasnya
+    atau tidak. Jika ya, maka harus diperbesar dengan
+    memperbesar 2x lipat dan lebih besar dari bilangan prima terdekat.
+
+// JELASKAN SECARA SINGKAT APA ITU SIEVE OF ERATHOSTHENES
+   DALAM 1 KALIMAT! //
+    Suatu cara untuk menemukan semua bilangan prima di antara 1
+    dan suatu angka n.
+
+// APAKAH SIZE BARU HARUS MENGIKUTI BILANGAN PRIMA? //
+    Size hashtable tidak mengikuti nilai bilangan prima,
+    tetapi nilai bilangan prima terdekat harus lebih besar
+    dari pada size tabelnya.
+
+Nama    : Bonifasius Ariesto Adrian Finantyo
+NIM     : 00000042580
