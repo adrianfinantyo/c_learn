@@ -63,6 +63,32 @@ void insertKey(MinHeap *mHeap, int k){
     }
 }
 
+void MinHeapify(MinHeap *mHeap, int i){
+    int l = left(i);
+    int r = right(i);
+    int smallest = i;
+    if(l < mHeap->heapSize && mHeap->hArr[l] < mHeap->hArr[i]) smallest = 1;
+    if(r < mHeap->heapSize && mHeap->hArr[r] < mHeap->hArr[smallest]) smallest = r;
+    if(smallest != i){
+        swap(&mHeap->hArr[i], &mHeap->hArr[smallest]);
+        MinHeapify(mHeap, smallest);
+    }
+}
+
+int extraction(MinHeap *mHeap){
+    if(mHeap->heapSize <= 0) return INT_MAX;
+    if(mHeap->heapSize == 1){
+        mHeap->heapSize--;
+        return mHeap->hArr[0];
+    }
+
+    // Simpan nilai minummnya dan hapus dari heap
+    int root = mHeap->hArr[0];
+    mHeap->hArr[0] = mHeap->hArr[mHeap->heapSize-1];
+    mHeap->heapSize--;
+    MinHeapify(mHeap, 0);
+}
+
 int getMin(MinHeap *mHeap){
     return mHeap->hArr[0];
 }
@@ -73,6 +99,26 @@ void printHeap(MinHeap mHeap){
         printf("%d ", mHeap.hArr[i]);
     }
     printf("\n");
+}
+
+// Mengurangi nilai pada indeex i mnjadi newValue dengan asumsi
+// nilai newValue lebih kecil dari hArr[i]
+void decreaseKey(MinHeap *mHeap, int i, int newValue){
+    mHeap->hArr[i] = newValue;
+    while(i != 0 && mHeap->hArr[parent(i) > mHeap->hArr[i]]){
+        swap(&mHeap->hArr[i], &mHeap->hArr[parent(i)]);
+        i = parent(i);
+    }
+}
+
+// Pertama-tama dengan mengurangi nilainya menjadi negatif tak terhingga
+// Agar menjadi paling kecil
+// Lalu memanggil extractMin() untuk menghapusnya
+void deleteKey(MinHeap *mHeap, int i){
+    printf("Current Heap size = %d\n\n", mHeap->heapSize);
+    printf("Deleting index %d from heap\n", i);
+    decreaseKey(mHeap, i, INT_MIN);
+    extractMin(mHeap);
 }
 
 int main(){
@@ -99,7 +145,7 @@ int main(){
     extractMin(&mHeap);
     printHeap(mHeap);
 
-    deleteKey(&mHeap), 1;
+    deleteKey(&mHeap, 1);
     printHeap(mHeap);
 
     return 0;
